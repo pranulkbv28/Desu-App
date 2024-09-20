@@ -2,6 +2,14 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'Zocial.ttf','SimpleLineIcons.ttf', 'Octicons.ttf', 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf', 'Ionicons.ttf', 'Foundation.ttf', 'Fontisto.ttf', 'FontAwesome6_Solid.ttf', 'FontAwesome6_Regular.ttf', 'FontAwesome5_Brands.ttf', 'FontAwesome.ttf', 'Feather.ttf', 'EvilIcons.ttf', 'Entypo.ttf', 'AntDesign.ttf' ] // Specify font files
+]
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
