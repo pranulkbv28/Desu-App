@@ -16,14 +16,14 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const HomeTabIcon = ({focused}) => {
-  return <Entypo name="home" size={24} color={focused ? '#bfbdbc' : 'black'} />;
+  return <Entypo name="home" size={24} color={focused ? '#bfbdbc' : 'white'} />;
 };
 const ListTabIcon = ({focused}) => {
   return (
     <MaterialIcon
       name="restaurant-menu"
       size={24}
-      color={focused ? '#bfbdbc' : 'black'}
+      color={focused ? 'red' : 'white'}
     />
   );
 };
@@ -32,13 +32,13 @@ const MenuTabIcon = ({focused}) => {
     <FontAwesome6
       name="bowl-food"
       size={24}
-      color={focused ? '#bfbdbc' : 'black'}
+      color={focused ? '#bfbdbc' : 'white'}
     />
   );
 };
 const InboxTabIcon = ({focused}) => {
   return (
-    <Octicons name="mail" size={24} color={focused ? '#bfbdbc' : 'black'} />
+    <Octicons name="mail" size={24} color={focused ? '#bfbdbc' : 'white'} />
   );
 };
 
@@ -51,7 +51,7 @@ function BottomTabs() {
           bottom: 20, // Moves the tab bar 20 units from the bottom of the screen
           height: 60, // Adjust the height of the tab bar
           // borderRadius: 20, // Optional: Adds rounded corners
-          backgroundColor: 'white', // Optional: Adds background color for visibility
+          backgroundColor: '#37673a', // Optional: Adds background color for visibility
           paddingBottom: 10, // Optional: Ensures icons don't get too close to the edge
           paddingTop: 10, // Optional: Adds padding around icons
         },
@@ -62,6 +62,7 @@ function BottomTabs() {
         options={{
           tabBarActiveTintColor: 'green',
           tabBarIcon: HomeTabIcon,
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -70,6 +71,7 @@ function BottomTabs() {
         options={{
           tabBarActiveTintColor: 'green',
           tabBarIcon: ListTabIcon,
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -78,6 +80,7 @@ function BottomTabs() {
         options={{
           tabBarActiveTintColor: 'green',
           tabBarIcon: MenuTabIcon,
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -86,6 +89,7 @@ function BottomTabs() {
         options={{
           tabBarActiveTintColor: 'green',
           tabBarIcon: InboxTabIcon,
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
