@@ -1,4 +1,11 @@
-import {StyleSheet, Text, ScrollView, Image, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  ScrollView,
+  Image,
+  View,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import Header from '../components/Header';
 import homeImg from '../assets/images/home-page-img.png';
@@ -7,8 +14,11 @@ import foodCard2 from '../assets/images/foodCard2.png';
 import foodCard3 from '../assets/images/foodCard3.png';
 import Card from '../components/Card';
 import Card2 from '../components/Card2';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigate = useNavigation();
+
   return (
     <ScrollView style={styles.body}>
       <Header>
@@ -26,6 +36,11 @@ const HomeScreen = () => {
         </View>
         <View style={styles.cardsContainer2}>
           <Card2 />
+        </View>
+        <View>
+          <Pressable onPress={() => navigate.navigate('Signup')}>
+            <Text>Go to Login page</Text>
+          </Pressable>
         </View>
       </View>
     </ScrollView>

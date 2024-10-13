@@ -11,6 +11,9 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {NavigationContainer} from '@react-navigation/native';
+import SignupScreen from '../screens/SignupScreen';
+import VerificationScreen from '../screens/VerificationScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -111,6 +114,9 @@ function MainStack() {
             headerShown: false,
           }}
         />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+        <Stack.Screen name="Verification" component={VerificationScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </SafeAreaView>
   );

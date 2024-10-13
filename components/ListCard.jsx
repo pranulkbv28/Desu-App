@@ -1,20 +1,22 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
 const ListCard = ({imgSrc, deliveryTime, priceForOne, place}) => {
+  console.log('Here');
   return (
-    <View style={styles.body}>
+    <Pressable style={styles.body}>
       <Image style={styles.image} source={imgSrc} resizeMode="cover" />
       <View style={styles.textContainer}>
         <View style={styles.text}>
           <Text style={styles.text1}>{deliveryTime}</Text>
           <Text style={styles.text2}>₹{priceForOne} for one</Text>
+          {/* <Text>Hello</Text> */}
         </View>
         <View style={styles.text2}>
           <Text style={styles.text3}>{place}</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
