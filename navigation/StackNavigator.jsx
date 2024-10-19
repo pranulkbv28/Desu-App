@@ -14,6 +14,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import SignupScreen from '../screens/SignupScreen';
 import VerificationScreen from '../screens/VerificationScreen';
 import LoginScreen from '../screens/LoginScreen';
+import CheckoutScreen from '../screens/CheckoutScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,6 +45,27 @@ const InboxTabIcon = ({focused}) => {
     <Octicons name="mail" size={24} color={focused ? '#bfbdbc' : 'white'} />
   );
 };
+
+function MenuStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Menu"
+        component={MenuScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Checkout"
+        component={CheckoutScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 function BottomTabs() {
   return (
@@ -79,7 +101,7 @@ function BottomTabs() {
       />
       <Tab.Screen
         name="MENU"
-        component={MenuScreen}
+        component={MenuStack}
         options={{
           tabBarActiveTintColor: 'green',
           tabBarIcon: MenuTabIcon,
@@ -117,6 +139,7 @@ function MainStack() {
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="Verification" component={VerificationScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Checkout" component={CheckoutScreen} />
       </Stack.Navigator>
     </SafeAreaView>
   );
@@ -135,5 +158,7 @@ export default StackNavigator;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    // paddingBottom: 20,
+    // backgroundColor: 'red',
   },
 });
